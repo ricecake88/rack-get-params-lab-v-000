@@ -22,8 +22,12 @@ class Application
       end
     elsif req.path.match(/add/)
       search_item = req.params["item"]
-      item = @@items.detect {|item| item == search_item}
-      @@cart << item
+      @@items.each do |item|
+        if item == search_item
+          "added #{item}"
+          @@cart << item
+        end
+      end
     else
       resp.write "Path Not Found"
     end
