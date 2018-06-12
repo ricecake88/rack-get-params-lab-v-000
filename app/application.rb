@@ -24,7 +24,7 @@ class Application
       search_item = req.params["item"]
       @@items.each do |item|
         if item == search_item
-          "added #{item}"
+          resp.write "added #{item}"
           @@cart << item
         end
       end
