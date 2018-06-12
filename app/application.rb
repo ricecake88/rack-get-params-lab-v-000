@@ -18,7 +18,10 @@ class Application
       @@cart.each {|item| resp.write "#{item}"}
     elsif req.path.match(/add/)
       search_item = req.params["item"]
-      @@items.include?(search_item)
+      binding.pry
+      item = @@items.detect? {|item| if item == search_item}
+      binding.pry
+      @@cart << item
     else
       resp.write "Path Not Found"
     end
