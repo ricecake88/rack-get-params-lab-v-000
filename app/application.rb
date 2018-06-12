@@ -19,7 +19,7 @@ class Application
     elsif req.path.match(/add/)
       search_item = req.params["item"]
       binding.pry
-      item = @@items.detect? {|item| if item == search_item}
+      item = @@items.detect? {|item| item == search_item}
       binding.pry
       @@cart << item
     else
